@@ -6,7 +6,7 @@ from django.db.models import Q
 from .models import Task
 from .forms import TaskForm
 
-
+    
 # USER DASHBOARD
 @login_required
 def dashboard(request):
