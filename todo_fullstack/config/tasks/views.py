@@ -43,8 +43,7 @@ def delete_task(request, id):
 @login_required
 def edit_task(request, id):
 
-    task = get_object_or_404(Task, id=id, user=request.user)
-    form = TaskForm(instance=task)
+    task = get_object_or_404(Task, id=id, user=request.user)  
 
     if request.method == "POST":
         form = TaskForm(request.POST, instance=task)
@@ -52,6 +51,8 @@ def edit_task(request, id):
         if form.is_valid():
             form.save()
             return redirect("dashboard")
+    else:
+        form = TaskForm(instance=task) 
 
     return render(request, "tasks/edit_task.html", {
         "form": form

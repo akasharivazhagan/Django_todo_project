@@ -8,7 +8,7 @@ class Task(models.Model):
 
     STATUS_CHOICES = (
         ('pending','pending'),
-        ('processing','Processing'),
+        ('processing','Processing'),  
         ('completed','Completed'),
     )
 
@@ -20,3 +20,4 @@ class Task(models.Model):
 
     def __str__(self):
         return self.title
+    
